@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wAaL5RVgtUfA/C2h4nHZWKeLkeLGxdmVQX2pKTPhmBLGb3KvMAnfanKMGvWa3kLodYAXY6WjKA8Laq38DKF9tQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Cruzez\\Desktop\\facebook\\id\\ClarksonsTill\\Clarksons.Till\\Clarksons.Till.Api\\Clarksons.Till.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cruzez\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "d8fde005-c80f-47d9-81fa-674857e42201",
+		"name": "ClarksonsTillTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBasket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2435bba-7c26-4728-8922-7986208fa28f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddToCheckoutBasketMenuItem2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c90ed449-ec8f-4e9b-851b-3ba5fbc67323",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Starter2\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "2",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddToCheckoutBasketMenuItem4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c90ed449-ec8f-4e9b-851b-3ba5fbc67323",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Starter4\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "4",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddToCheckoutBasketMenuItem7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c90ed449-ec8f-4e9b-851b-3ba5fbc67323",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Main2\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "7",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCheckoutBasketMenuItem4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00732645-e88e-4c3a-a7a6-99aedc91ebd8",
+						"exec": [
+							"pm.test(\"Check Quantity 5 of menuItem 4 is added\", function () {",
+							"   ",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    var basketItemIndex = jsonData.basketItems.map(",
+							"            function(basketItem) {",
+							"                return basketItem.menuItem.name; ",
+							"            }",
+							"        ).indexOf('Starter4');",
+							"        ",
+							"    var basketitem = jsonData.basketItems[basketItemIndex];",
+							"    pm.expect(basketitem).to.exist;",
+							"    pm.expect(basketitem.quantity).to.eql(5);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\": 4,\n\t\"Quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCheckoutBasketMenuItem2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad5c4bf6-565e-4b26-beb5-c392078b2e16",
+						"exec": [
+							"",
+							"pm.test(\"Check MenuItem2 is deleted\", function () {",
+							"   ",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    var basketItemIndex = jsonData.basketItems.map(",
+							"            function(basketItem) {",
+							"                return basketItem.menuItem.name; ",
+							"            }",
+							"        ).indexOf('Starter2');",
+							"    ",
+							"    pm.expect(basketItemIndex).to.eql(-1);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ae98ff06-7bc6-46e4-b3fa-68c79fb3c2fe",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "2"
+				},
+				"url": {
+					"raw": "http://localhost:49988/api/Basket/Delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49988",
+					"path": [
+						"api",
+						"Basket",
+						"Delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e018f152-78fb-4a7b-90e7-9c6d8aeeb460",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "651cc0bc-1052-478c-aa3a-6623ff193fb0",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"pm.test(\"Response time is less than 200ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);",
+					"});",
+					"pm.test(\"Response must be valid and have a body\", function () {",
+					"     pm.response.to.be.ok;",
+					"     pm.response.to.be.withBody;",
+					"     pm.response.to.be.json;",
+					"});"
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
