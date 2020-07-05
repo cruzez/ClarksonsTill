@@ -11,3 +11,4 @@ namespace Clarksons.Till.Api
         public int Quantity { get; set; }
     }
 }
+//dto
